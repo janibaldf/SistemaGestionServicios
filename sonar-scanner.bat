@@ -1,0 +1,1 @@
+F:\Servicios\sonarQRunner\bin\sonar-scanner.bat

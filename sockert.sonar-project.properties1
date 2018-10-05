@@ -1,0 +1,23 @@
+#Configure here general information about the environment, such as SonarQube DB details for example
+#No information about specific project should appear here
+
+#----- Default SonarQube server
+
+
+sonar.projectKey=SistemaGestionServicios
+
+sonar.projectName=SistemaGestionServicios
+sonar.projectVersion=0.0
+sonar.language=java
+sonar.scm.disabled=true
+#sonar.sources=E:/Desarrollo/Socket Bancos Locales/SocketServerTest/SocketServerTest/src
+sonar.sources=src
+sonar.tests=test
+#sonar.exclusions=\SocketServer/src/com/claro/wsmencache/*.java,\SocketServer/src/com/claro/wsesb/*.java
+sonar.java.source=8
+
+sonar.java.binaries=/build
+
+sonar.binaries=build
+sonar.issuesReport.html.enable=true
+sonar.issuesReport.console.enable=true

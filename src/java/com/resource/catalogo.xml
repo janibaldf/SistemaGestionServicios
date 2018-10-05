@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">        
+<struts>
+    <package name="com.controller.action" extends="struts-default">
+        <!--Cliente-->
+        <action name="cliente/lista" class="com.controller.action.ClienteEx" method = "listAllCliente">
+            <result name="success">/cliente/list.jsp</result>
+    
+        </action>
+        <action name="cliente" class="com.controller.action.ClienteEx" method = "listAllCliente">
+            <result name="success">/cliente/list.jsp</result>
+    
+        </action>
+        <action name="cliente/editar" class="com.controller.action.ClienteEx" method = "editCliente">
+            <result name="success">/cliente/form.jsp</result>
+
+        </action>
+        <action name="cliente/nuevo" class="com.controller.action.ClienteEx" method = "IniciarCliente">
+            <result name="success">/cliente/form.jsp</result>
+        </action>
+        <action name="cliente/guardar" class="com.controller.action.ClienteEx" method ="saveCliente">
+            <!--<result name="success" type="redirectAction">ruta/lista</result>-->
+            <result name="success">form.jsp</result>
+            <result name="input">form.jsp</result>
+        </action>
+        <action name="cliente/ver" class="com.controller.action.ClienteEx" method ="viewCliente">
+            
+            <result name="success">view.jsp</result>
+        </action>
+        <action name="cliente/eliminar" class="com.controller.action.ClienteEx" method ="deleteCliente">
+            <result name="success" type="redirectAction" >cliente/lista</result>
+        </action>
+        
+        
+        
+        
+        <!--Permisos-->
+        <action name="permisos/eliminar" class="com.controller.action.PermisoEx" method = "eliminar">
+            <result name="success">/permiso/list.jsp</result>
+        </action>
+        <action name="permisos/nuevo" class="com.controller.action.PermisoEx" method = "getInicial">
+            <result name="success">/permiso/form.jsp</result>
+        </action>
+        <action name="permisos/lista" class="com.controller.action.PermisoEx" method = "listaPermisos">
+            <result name="success">/permiso/list.jsp</result>
+        </action>
+        <action name="permisos/guardar" class="com.controller.action.PermisoEx" method = "savePermisos">
+            <result name="success">/permiso/form.jsp</result>
+        </action>
+        
+        
+        <!--Usuarios-->
+        <action name="usuario/changepass" class="com.controller.action.usuarioEX" method = "changepass">
+            <result name="success">/usuario/changepass.jsp</result>
+        </action>
+        
+        <action name="usuario/dochangepass" class="com.controller.action.usuarioEX" method = "dochangepass">
+            <result name="success">/usuario/changepass.jsp</result>
+        </action>
+        <action name="usuario/lista" class="com.controller.action.usuarioEX" method = "listAll">
+            <result name="success">/usuario/list.jsp</result>
+        </action>
+        <action name="usuario" class="com.controller.action.usuarioEX" method = "listAll">
+            <result name="success">/usuario/list.jsp</result>
+        </action>
+        <action name="usuario/editar" class="com.controller.action.usuarioEX" method = "editusuario">
+            <result name="success">/usuario/form.jsp</result>
+            <result name="error">/usuario/form.jsp</result>
+        </action>
+        <action name="usuario/nuevo" class="com.controller.action.usuarioEX" method = "">
+            <result name="success">/usuario/form.jsp</result>
+        </action>
+        <action name="usuario/guardar" class="com.controller.action.usuarioEX" method ="saveUsuario">
+            <!--<result name="success" type="redirectAction">ruta/lista</result>-->
+            <result name="success">form.jsp</result>
+            <result name="input">form.jsp</result>
+        </action>
+        <action name="usuario/ver" class="com.controller.action.usuarioEX" method ="viewUsuario">
+            <!--<result name="success" type="redirectAction">ruta/lista</result>-->
+            <result name="success">view.jsp</result>
+        </action>
+        <action name="usuario/eliminar" class="com.controller.action.usuarioEX" method ="deleteUsuario">
+            <result name="success" type="redirectAction" >usuario/lista</result>
+        </action>
+        
+        <!--Catalogo -->
+        <action name="catalogo/lista" class="com.controller.action.catalogoEX" method = "listAllTC">
+            <result name="success">/catalogo/list.jsp</result>
+        </action>
+        <action name="catalogo/nuevo" class="com.controller.action.catalogoEX" method = "">
+            <result name="success">/catalogo/form.jsp</result>
+        </action>
+        <action name="catalogo/guardar" class="com.controller.action.catalogoEX" method ="saveCatalogo">
+            <result name="success" type="redirectAction">main/index.jsp</result>
+            <result name="input">form.jsp</result>
+        </action>
+        <action name="catalogo/editar" class="com.controller.action.catalogoEX" method = "editCatalogo">
+            <result name="success">/catalogo/form.jsp</result>
+        </action>
+        
+        
+        
+        <!--Ruta-->
+        <action name="ruta/lista" class="com.controller.action.RutaEx" method = "listAll">
+            <result name="success">/ruta/list.jsp</result>
+            <result name="error">/template/error.jsp</result>
+        </action>
+        <action name="ruta" class="com.controller.action.RutaEx" method = "listAll">
+            <result name="success">/ruta/list.jsp</result>
+            <result name="error">/template/error.jsp</result>
+        </action>
+        <action name="ruta/editar" class="com.controller.action.RutaEx" method = "editRuta">
+            <result name="success">/ruta/edit.jsp</result>
+            <result name="error">/template/error.jsp</result>
+        </action>
+        <action name="ruta/nuevo" class="com.controller.action.RutaEx" method = "">
+            <result name="success">/ruta/new.jsp</result>
+        </action>
+        <action name="ruta/guardar" class="com.controller.action.RutaEx" method ="saveRuta">
+            <!--<result name="success" type="redirectAction">ruta/lista</result>-->
+            <result name="success">new.jsp</result>
+            <result name="input">new.jsp</result>
+        </action>
+        <action name="ruta/ver" class="com.controller.action.RutaEx" method ="viewRuta">
+            <!--<result name="success" type="redirectAction">ruta/lista</result>-->
+            <result name="success">view.jsp</result>
+        </action>
+        <action name="ruta/eliminar" class="com.controller.action.RutaEx" method ="deleteRuta">
+            <result name="success" type="redirectAction" >ruta/lista</result>
+        </action>
+    </package>
+
+
+</struts>

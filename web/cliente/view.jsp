@@ -1,0 +1,61 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<s:if test="#session.userId>''">
+<s:include  value="/template/header.jsp"></s:include>
+<s:include  value="/template/navbar.jsp"></s:include>
+<s:include  value="/template/sidebar.jsp"></s:include>
+<s:include   value="/template/main.jsp"></s:include>
+     <div class="animated fadeIn">
+        <div class="card">
+            <div class="card-header">
+                <i class="fa fa-edit"></i> Detalle del Registro
+            </div>
+            <div class="card-body">
+                <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
+                        <div class="row">
+    <table class="table table-striped table-bordered datatable dataTable no-footer"> 
+        <tbody>
+            <tr><td>Codigo</td><td><s:property value="cliente.codigo"></s:property></td></tr>
+         <tr><td>Ruta</td><td><s:property value="cliente.codigoRuta.autorizacion"></s:property></td></tr>
+         <tr><td>Orden Servicio</td><td><s:property value="cliente.ordenServicio"></s:property></td></tr>
+         <tr><td>Tipo Pago</td><td><s:property value="cliente.tipoPago.codigo"></s:property></td></tr>
+         <tr><td>Tipo Servicio</td><td><s:property value="cliente.tipoServicio.descripcion"></s:property></td></tr>
+         <tr><td>Nombre</td><td><s:property value="cliente.nombre"></s:property></td></tr>
+         <tr><td>Telefono</td><td><s:property value="cliente.telefono"></s:property></td></tr>
+         <tr><td>NIT</td><td><s:property value="cliente.nit"></s:property></td></tr>
+         <tr><td>Comprombante</td><td><s:property value="cliente.comprobante"></s:property></td></tr>
+         <tr><td>Zona</td><td><s:property value="cliente.zona"></s:property></td></tr>
+         <tr><td>Colonia</td><td><s:property value="cliente.colonia"></s:property></td></tr>
+         <tr><td>Avenida</td><td><s:property value="cliente.avenida"></s:property></td></tr>
+         <tr><td>Calle</td><td><s:property value="cliente.calle"></s:property></td></tr>
+         <tr><td>Num.Casa</td><td><s:property value="cliente.numeroCasa"></s:property></td></tr>
+         <tr><td>Apartamento</td><td><s:property value="cliente.apartamento"></s:property></td></tr>
+         <tr><td>Direccion Impresion</td><td><s:property value="cliente.direccionImpresion"></s:property></td></tr>
+         <tr><td>Referencia</td><td><s:property value="cliente.referencia"></s:property></td></tr>
+          <tr><td>Estado</td><td><s:property value="cliente.codigoEstado.descripcion"></s:property></td></tr>
+          <tr><td>Motivo Estado</td><td><s:property value="cliente.motivoEstado"></s:property></td></tr>
+          <tr><td>Comentario</td><td><s:property value="cliente.comentario"></s:property></td></tr>
+          <tr><td>Costo Servicio</td><td><s:property value="cliente.costoServicio"></s:property></td></tr>
+          <tr><td>Saldo</td><td><s:property value="cliente.saldo"></s:property></td></tr>
+         <tr><td>Fecha Ingreso</td><td><s:property value="cliente.fechaActualizacion"></s:property></td></tr>
+         <tr><td>Fecha Actualizacion</td><td><s:property value="cliente.fechaIngreso"></s:property></td></tr>
+        </tbody>
+        <tfoot>
+            
+        </tfoot>
+    </table>
+         </div>
+             </div>
+             </div>
+             </div>
+             </div>
+             
+<s:include value="/template/footer.jsp"></s:include>
+</s:if>
+<s:else>
+<script>
+
+    location.replace("../")
+    
+
+</script>
+</s:else>
