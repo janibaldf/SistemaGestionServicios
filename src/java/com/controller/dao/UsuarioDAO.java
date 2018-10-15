@@ -20,17 +20,18 @@ public class UsuarioDAO implements iControllerDAO<eUsuario> {
 
     ConnectDB estadoBD = ConnectDB.getEstadoBD();
     Connection cnn = estadoBD.getCnn();
+    private static String CODIGO= "CODIGO";
 
     public int validateLogin(String user, String pass) {
         int codUser = -1;
-        String SELECT_USERPASS = "SELECT CODIGO FROM TB_USUARIO WHERE CUENTA=? AND PASSWORD=? AND ESTADO>0;";
+        String SELECT_USERPASS = "SELECT CODIGO FROM TB_USUARIO WHERE CUENTA=? AND PASSWORD=?  AND ESTADO>0;";
 
         try (PreparedStatement pstm = cnn.prepareStatement(SELECT_USERPASS)) {
             pstm.setString(1, user);
             pstm.setString(2, encryptPassword(pass));
             try (ResultSet rset = pstm.executeQuery()) {
                 if (rset.next()) {
-                    codUser = rset.getInt("CODIGO");
+                    codUser = rset.getInt(CODIGO);
                 }
                 pstm.close();
                 rset.close();
@@ -52,7 +53,7 @@ public class UsuarioDAO implements iControllerDAO<eUsuario> {
             prepareStatement.setInt(1, id);
             try (ResultSet rset = prepareStatement.executeQuery()) {
                 if (rset.next()) {
-                    usuario.setCodigo(rset.getInt("CODIGO"));
+                    usuario.setCodigo(rset.getInt(CODIGO));
                     usuario.setCuenta(rset.getString("CUENTA"));
                     usuario.setPassword(rset.getString("PASSWORD"));
                     usuario.setNombre(rset.getString("NOMBRE"));
@@ -87,7 +88,7 @@ public class UsuarioDAO implements iControllerDAO<eUsuario> {
             try (ResultSet rset = prepareStatement.executeQuery()){;
             while (rset.next()) {
                 eUsuario usuario = new eUsuario();
-                usuario.setCodigo(rset.getInt("CODIGO"));
+                usuario.setCodigo(rset.getInt(CODIGO));
                 usuario.setCuenta(rset.getString("CUENTA"));
                 usuario.setPassword(rset.getString("PASSWORD"));
                 usuario.setNombre(rset.getString("NOMBRE"));

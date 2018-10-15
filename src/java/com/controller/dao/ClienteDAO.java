@@ -19,7 +19,7 @@ public class ClienteDAO implements iControllerDAO<eCliente> {
 
     ConnectDB estadoBD = ConnectDB.getEstadoBD();
     Connection cnn = estadoBD.getCnn();
-
+    private static String COSTOSERVICIO="COSTO_SERVICIO";
     @Override
     public eCliente selectOne(int id) {
         String sqlSelectAll = "SELECT * FROM TB_CLIENTE WHERE CODIGO=?";
@@ -52,7 +52,7 @@ public class ClienteDAO implements iControllerDAO<eCliente> {
                     cliente.setcEstado(rset.getInt("CODIGO_ESTADO"));
                     cliente.setMotivoEstado(rset.getString("MOTIVO_ESTADO"));
                     cliente.setComentario(rset.getString("COMENTARIO"));
-                    cliente.setCostoServicio(rset.getDouble("COSTO_SERVICIO"));
+                    cliente.setCostoServicio(rset.getDouble(COSTOSERVICIO));
                     cliente.setSaldo(rset.getDouble("SALDO"));
                     timestamp = rset.getTimestamp("FECHA_ACTUALIZACION");
                     date = new Date(timestamp.getTime());
@@ -105,8 +105,8 @@ public class ClienteDAO implements iControllerDAO<eCliente> {
                     cliente.setcEstado(rset.getInt("CODIGO_ESTADO"));
                     cliente.setMotivoEstado(rset.getString("MOTIVO_ESTADO"));
                     cliente.setComentario(rset.getString("COMENTARIO"));
-                    cliente.setCostoServicio(rset.getDouble("COSTO_SERVICIO"));
-                    cliente.setSaldo(rset.getDouble("COSTO_SERVICIO"));
+                    cliente.setCostoServicio(rset.getDouble(COSTOSERVICIO));
+                    cliente.setSaldo(rset.getDouble("SALDO"));
                     timestamp = rset.getTimestamp("FECHA_ACTUALIZACION");
                     date = new Date(timestamp.getTime());
                     cliente.setFechaActualizacion(date);

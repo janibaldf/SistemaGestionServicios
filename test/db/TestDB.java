@@ -1,5 +1,5 @@
 package db;
-
+/*
 import com.controller.dao.ClienteDAO;
 import com.controller.dao.RutaDAO;
 import org.junit.Test;
@@ -12,9 +12,9 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
-
+*/
 public class TestDB {
-
+/*
     //@Test
     public void ConexionDB_Test() throws SQLException {
         ConnectDB estadoBD = ConnectDB.getEstadoBD();
@@ -29,14 +29,7 @@ public class TestDB {
         List<eRuta> selectAll = rdao.selectAll();
 
     }
-    //@Test
-    public void sqlCliente_Insert_UpdateSaldo(){
-          eCliente cliente = new eCliente();
-        ClienteDAO clientedao = new ClienteDAO();
-        cliente.setCodigo(1);
-        cliente.setSaldo(BigDecimal.valueOf(50.00));
-        clientedao.updateSaldo(1, BigDecimal.valueOf(50.00));
-    }
+   
     
     
            @Test
@@ -78,7 +71,7 @@ public class TestDB {
         cliente.setAvenida("avenida");
         cliente.setComentario("comentario actualizado");
         cliente.setComprobante("R");
-        cliente.setCostoServicio(BigDecimal.valueOf(100.00));
+        cliente.setCostoServicio(100.00);
         cliente.setDireccionImpresion("direccionImpresion");
         cliente.setFechaActualizacion(new Date());
         cliente.setFechaIngreso(new Date());
@@ -130,4 +123,5 @@ public class TestDB {
         clientedao.add(cliente);
 
     }
+*/
 }

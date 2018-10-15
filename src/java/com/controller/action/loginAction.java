@@ -10,7 +10,7 @@ import com.model.dto.eUsuario;
     import com.opensymphony.xwork2.ActionSupport ;
 
 public class loginAction  extends ActionSupport implements SessionAware {
-
+  private String IDuser = "userId";
         private static final long serialVersionUID = -3434561352924343132L;
 
     public String getUserId() {
@@ -47,6 +47,7 @@ public class loginAction  extends ActionSupport implements SessionAware {
 
         
         private String userId, userPass, msg;
+      
         private SessionMap<String, Object> sessionMap;
 
         @Override
@@ -62,7 +63,7 @@ public class loginAction  extends ActionSupport implements SessionAware {
                 int validateLogin = usuariodao.validateLogin(userId, userPass);
                 if (validateLogin>=0) {
                     eUsuario usuario = usuariodao.selectOne(validateLogin);
-                    sessionMap.put("userId", usuario.getCuenta());
+                    sessionMap.put(IDuser, usuario.getCuenta());
                     sessionMap.put("userNombre", usuario.getNombre());
 
                     return "SUCCESS";
@@ -72,7 +73,7 @@ public class loginAction  extends ActionSupport implements SessionAware {
                     return "LOGIN";
                 }
             } else {
-                String getSessionAttr = (String) session.getAttribute("userId");
+                String getSessionAttr = (String) session.getAttribute(IDuser);
                 if (getSessionAttr != null) {
                     return "SUCCESS";
                 } else {
@@ -82,7 +83,7 @@ public class loginAction  extends ActionSupport implements SessionAware {
         }
 
         public String logout() {
-            sessionMap.remove("userId");
+            sessionMap.remove(IDuser);
             sessionMap.invalidate();
             return "LOGOUT";
         }

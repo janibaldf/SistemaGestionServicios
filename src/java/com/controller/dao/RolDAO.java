@@ -77,25 +77,24 @@ public class RolDAO implements iControllerDAO<eRol> {
 
     @Override
     public boolean add(eRol element) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return false;
     }
 
     @Override
-    public boolean delete(int id
-    ) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean delete(int id) {
+        return false;
     }
 
     @Override
     public boolean update(eRol elemen
     ) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return false;
     }
 
     @Override
     public boolean updateAll(int id
     ) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return false;
     }
 
 }

@@ -25,7 +25,7 @@ public class PermisoDAO implements iControllerDAO<ePermiso> {
 
     @Override
     public ePermiso selectOne(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return null;
     }
 
     @Override
@@ -77,7 +77,7 @@ public class PermisoDAO implements iControllerDAO<ePermiso> {
 
     @Override
     public boolean delete(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return false;
     }
 
     public boolean deletePermiso(int cUsuario, int cRol, int cRuta) {
@@ -97,12 +97,12 @@ public class PermisoDAO implements iControllerDAO<ePermiso> {
 
     @Override
     public boolean update(ePermiso elemen) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       return false;
     }
 
     @Override
     public boolean updateAll(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return false;
     }
 
 }

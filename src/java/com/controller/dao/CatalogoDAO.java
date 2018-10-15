@@ -19,6 +19,11 @@ public class CatalogoDAO implements iControllerDAO<eCatalogo> {
     ConnectDB estadoBD = ConnectDB.getEstadoBD();
     Connection cnn = estadoBD.getCnn();
     private static String  SELECT_ONE = "SELECT * FROM TB_CATALOGO WHERE CODIGO = ?;";
+    private static String CODIGO="CODIGO";
+    private static String DESCRIPCION="DESCRIPCION";
+    private static String TIPOCATALOGO="TIPO_CATALOGO";
+    private static String FECHAACTUALIZACION="FECHA_ACTUALIZACION";
+    private static String FECHAINGRESO="FECHA_INGRESO";
     
     @Override
     public eCatalogo selectOne(int id) {
@@ -30,13 +35,13 @@ public class CatalogoDAO implements iControllerDAO<eCatalogo> {
                 prepareStatement.setInt(1, id);
                 try (ResultSet rset = prepareStatement.executeQuery()) {
                     if (rset.next()) {
-                        cat.setCodigo(rset.getInt("CODIGO"));
-                        cat.setDescripcion(rset.getString("DESCRIPCION"));
-                        cat.setTipoCatalogo(rset.getInt("TIPO_CATALOGO"));
-                        Timestamp timestamp = rset.getTimestamp("FECHA_ACTUALIZACION");
+                        cat.setCodigo(rset.getInt(CODIGO));
+                        cat.setDescripcion(rset.getString(DESCRIPCION));
+                        cat.setTipoCatalogo(rset.getInt(TIPOCATALOGO));
+                        Timestamp timestamp = rset.getTimestamp(FECHAACTUALIZACION);
                         Date date = new Date(timestamp.getTime());
                         cat.setFechaActualizacion(date);
-                        timestamp = rset.getTimestamp("FECHA_INGRESO");
+                        timestamp = rset.getTimestamp(FECHAINGRESO);
                         date = new Date(timestamp.getTime());
                         cat.setFechaIngreso(date);
                     }
@@ -64,13 +69,13 @@ public class CatalogoDAO implements iControllerDAO<eCatalogo> {
                 try (ResultSet rset = prepareStatement.executeQuery(SELECT_ALL)) {
                     while (rset.next()) {
                         eCatalogo cat = new eCatalogo();
-                        cat.setCodigo(rset.getInt("CODIGO"));
-                        cat.setDescripcion(rset.getString("DESCRIPCION"));
-                        cat.setTipoCatalogo(rset.getInt("TIPO_CATALOGO"));
-                        timestamp = rset.getTimestamp("FECHA_ACTUALIZACION");
+                        cat.setCodigo(rset.getInt(CODIGO));
+                        cat.setDescripcion(rset.getString(DESCRIPCION));
+                        cat.setTipoCatalogo(rset.getInt(TIPOCATALOGO));
+                        timestamp = rset.getTimestamp(FECHAACTUALIZACION);
                         date = new Date(timestamp.getTime());
                         cat.setFechaActualizacion(date);
-                        timestamp = rset.getTimestamp("FECHA_INGRESO");
+                        timestamp = rset.getTimestamp(FECHAINGRESO);
                         date = new Date(timestamp.getTime());
                         cat.setFechaIngreso(date);
                         lista.add(cat);
@@ -97,13 +102,13 @@ public class CatalogoDAO implements iControllerDAO<eCatalogo> {
             try (ResultSet rset = pstm.executeQuery()) {
                 while (rset.next()) {
                     eCatalogo cat = new eCatalogo();
-                    cat.setCodigo(rset.getInt("CODIGO"));
-                    cat.setDescripcion(rset.getString("DESCRIPCION"));
-                    cat.setTipoCatalogo(rset.getInt("TIPO_CATALOGO"));
-                    timestamp = rset.getTimestamp("FECHA_ACTUALIZACION");
+                    cat.setCodigo(rset.getInt(CODIGO));
+                    cat.setDescripcion(rset.getString(DESCRIPCION));
+                    cat.setTipoCatalogo(rset.getInt(TIPOCATALOGO));
+                    timestamp = rset.getTimestamp(FECHAACTUALIZACION);
                     date = new Date(timestamp.getTime());
                     cat.setFechaActualizacion(date);
-                    timestamp = rset.getTimestamp("FECHA_INGRESO");
+                    timestamp = rset.getTimestamp(FECHAINGRESO);
                     date = new Date(timestamp.getTime());
                     cat.setFechaIngreso(date);
                     lista.add(cat);
