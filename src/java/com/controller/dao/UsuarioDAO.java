@@ -118,7 +118,7 @@ public class UsuarioDAO implements iControllerDAO<eUsuario> {
        
             try ( PreparedStatement pstm = cnn.prepareStatement(SQL_INSERT)){
             pstm.setString(1, element.getCuenta());
-            pstm.setString(2, element.getPassword());
+            pstm.setString(2, encryptPassword(element.getPassword()));
             pstm.setString(3, element.getNombre());
             pstm.setString(4, element.getApellido());
             pstm.setString(5, element.getEstado());

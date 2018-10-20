@@ -9,8 +9,8 @@
   </main>
 
 <footer class="app-footer">
-<span><a href="https://coreui.io/pro/">CoreUI Pro</a> </span>
-<span class="ml-auto">Powered by <a href="https://coreui.io/pro/">CoreUI Pro</a></span>
+<span></span>
+<span class="ml-auto"></span>
 </footer>
 
 
