@@ -81,10 +81,10 @@
                     <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-calculator"></i>Pagos</a>
                     <ul class="nav-dropdown-items">
                         <li class="nav-item">
-                            <a class="nav-link" href="../pagos/lista"><i class="icon-puzzle"></i>Listado</a>
+                            <a class="nav-link" href="../pago/lista"><i class="icon-puzzle"></i>Listado</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../pagos/nuevo"><i class="icon-puzzle"></i>Nuevo Pago</a>
+                            <a class="nav-link" href="../pago/nuevo"><i class="icon-puzzle"></i>Nuevo Pago</a>
                         </li>
                     </ul>
                 </li>

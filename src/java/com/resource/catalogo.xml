@@ -33,7 +33,19 @@
         </action>
         
         
-        
+         <!--Pagos-->
+        <action name="pago/eliminar" class="com.controller.action.CuentaClienteEX" method = "eliminar">
+            <result name="success">/pago/list.jsp</result>
+        </action>
+        <action name="pago/nuevo" class="com.controller.action.CuentaClienteEX" method = "getInicial">
+            <result name="success">/pago/form.jsp</result>
+        </action>
+        <action name="pago/lista" class="com.controller.action.CuentaClienteEX" method = "listaPagos">
+            <result name="success">/pago/list.jsp</result>
+        </action>
+        <action name="pago/guardar" class="com.controller.action.CuentaClienteEX" method = "savePago">
+            <result name="success">/pago/form.jsp</result>
+        </action>
         
         <!--Permisos-->
         <action name="permisos/eliminar" class="com.controller.action.PermisoEx" method = "eliminar">
