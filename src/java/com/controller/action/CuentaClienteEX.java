@@ -24,14 +24,14 @@ public class CuentaClienteEX extends ActionSupport implements ModelDriven<eCuent
     private int cCliente; 
     private int cMes;
     private double monto;
-    private int cTipoTransaccion; 
+    private int cTipoTransaccion2; 
 
-    public int getcTipoTransaccion() {
-        return cTipoTransaccion;
+    public int getcTipoTransaccion2() {
+        return cTipoTransaccion2;
     }
 
-    public void setcTipoTransaccion(int cTipoTransaccion) {
-        this.cTipoTransaccion = cTipoTransaccion;
+    public void setcTipoTransaccion2(int cTipoTransaccion2) {
+        this.cTipoTransaccion2 = cTipoTransaccion2;
     }
     
 
@@ -65,11 +65,11 @@ public class CuentaClienteEX extends ActionSupport implements ModelDriven<eCuent
         pago.setCcliente(cliente.getCodigo());
         pago.setCostoServicio(cliente.getCostoServicio());
         pago.setMes(String.valueOf(getcMes()));
-        pago.setMontoPago(getMonto());
-        pago.setcTipoTransaccion(getcTipoTransaccion());
-        
+        pago.setMontoPago(this.getMonto());
+        pago.setcTipoTransaccion(this.getcTipoTransaccion2());
+         pago.setSaldoAnterior(cliente.getSaldo());
         pago.setNuevoSaldo(cliente.getSaldo()-getMonto());
-        pago.setSaldoAnterior(cliente.getSaldo());
+
        
         //pago.setTipoTransaccion(getcTipoTransaccion());
         pagodao.add(pago);

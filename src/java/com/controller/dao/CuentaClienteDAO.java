@@ -115,7 +115,7 @@ public class CuentaClienteDAO implements iControllerDAO<eCuentaCliente> {
              pstm.setDouble(4, e.getSaldoAnterior());
              pstm.setDouble(5, e.getNuevoSaldo());
              pstm.setString(6, e.getMes());
-             pstm.setInt(7, e.getcTipoTransaccion() );
+             pstm.setInt(7,e.getcTipoTransaccion() );
             executeUpdate = pstm.executeUpdate();
             pstm.close();
          } catch (SQLException ex) {

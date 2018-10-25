@@ -85,7 +85,7 @@
                     <div class="form-group row">
                             <label class="col-md-3 col-form- label" for="cTipoTransaccion">Transaccion</label>
                             <div class="col-md-5">         
-                                <select id="cTipoTransaccion" name="cTipoTransaccion" class="form-control">
+                                <select id="cTipoTransaccion2" name="cTipoTransaccion2" class="form-control">
                                     <option value="-1">Seleccione</option>
                                     <s:iterator value="transacciones" status="transaccioneStatus">
                                     <option value="<s:property value="codigo" />"><s:property value="descripcion"/></option>
