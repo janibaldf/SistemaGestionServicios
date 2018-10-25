@@ -45,7 +45,7 @@
                                     <s:iterator value="clientes" status="clientesEstado">
                                         <tr role="row" class="even">
                                             <td><a class="btn btn-blue" href="editar?ccliente=<s:property value="codigo"/>"> <i class="fa fa-edit"></i></a></td>
-                                            <td><a class="btn btn-orange" href="pagos?ccliente=<s:property value="codigo"/>"> <i class="fa fa-money"></i></a></td>
+                                            <td><a class="btn btn-orange" href="../pago/nuevo?ccliente=<s:property value="codigo"/>"> <i class="fa fa-money"></i></a></td>
                                             <td class="sorting_1"><s:property value="codigo" /></td>
                                             <td class="sorting_1"><s:property value="codigoRuta.autorizacion" /> <s:property value="usuario.apellido " /></td>
                                             <td><s:property value="direccionImpresion" /></td>

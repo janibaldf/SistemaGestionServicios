@@ -185,12 +185,12 @@ public class ClienteDAO implements iControllerDAO<eCliente> {
         return true;
     }
 
-    public boolean updateSaldo(int codigoCliente, BigDecimal nuevoSaldo) {
+    public boolean updateSaldo(int codigoCliente, Double nuevoSaldo) {
         String SQL_UPDATE_SALDO = "UPDATE TB_CLIENTE SET  SALDO = ?, FECHA_ACTUALIZACION = CURRENT_TIMESTAMP WHERE CODIGO=?;";
 
         try (PreparedStatement pstm = cnn.prepareStatement(SQL_UPDATE_SALDO)) {
             pstm.setInt(2, codigoCliente);
-            pstm.setBigDecimal(1, nuevoSaldo);
+            pstm.setDouble(1, nuevoSaldo);
             int executeUpdate = pstm.executeUpdate();
             pstm.close();
         } catch (SQLException ex) {
