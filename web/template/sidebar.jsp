@@ -88,6 +88,18 @@
                         </li>
                     </ul>
                 </li>
+                
+                     <li class="nav-item nav-dropdown">
+                    <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-docs"></i>Reportes</a>
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../reporte/TodosRecibos.jsp"><i class="icon-puzzle"></i>Recibos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../reporte/todosClientesPDF.jsp"><i class="icon-puzzle"></i>Todos Clientes</a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../logout"><i class="icon-close"></i>Salida</a>
 

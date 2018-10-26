@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="03ffdb89-80ba-425d-8fb3-2a023b053a32">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Text Body"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT C.CODIGO,R.CODIGO, C.DIRECCION_IMPRESION,C.ZONA, R.AUTORIZACION, R.AUTORIZACION, R.COMENTARIO, C.COSTO_SERVICIO, C.SALDO 
+FROM 	TB_CLIENTE C , TB_RUTA R
+WHERE C.CODIGO_RUTA= R.CODIGO]]>
+	</queryString>
+	<field name="CODIGO" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="DIRECCION_IMPRESION" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ZONA" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="AUTORIZACION" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="COMENTARIO" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="COSTO_SERVICIO" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SALDO" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="25" width="100" height="20" uuid="8d13582d-aedc-4632-9d74-17a04b9fd131"/>
+				<text><![CDATA[AUTORIZACION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="25" width="100" height="20" uuid="14131aad-57fc-46f6-9fa4-8931d3ae1253"/>
+				<text><![CDATA[CODIGO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="25" width="100" height="20" uuid="99a91626-d074-498a-b5e8-062dfb5bcdd9"/>
+				<text><![CDATA[DIRECCION_IMPRESION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="25" width="100" height="20" uuid="19ad5428-fbc0-482c-80d0-bbc85ea09fbc"/>
+				<text><![CDATA[COMENTARIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="25" width="100" height="20" uuid="20d05ec7-7d7f-4397-88d2-b3bcfb7aae9e"/>
+				<text><![CDATA[COSTO_SERVICIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="500" y="25" width="100" height="20" uuid="b5d79e64-c608-4ef3-998c-c14ca2b1b8bc"/>
+				<text><![CDATA[SALDO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="557" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="423e3d87-3588-46ff-ac59-5340e2deef47"/>
+				<textFieldExpression><![CDATA[$F{AUTORIZACION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="100" height="20" uuid="25ff313c-dff4-4065-a456-af31421bbeb4"/>
+				<textFieldExpression><![CDATA[$F{CODIGO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="0" width="100" height="20" uuid="55f51ef1-25c1-4eb1-87da-9426e666f5b4"/>
+				<textFieldExpression><![CDATA[$F{DIRECCION_IMPRESION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="0" width="100" height="20" uuid="5e1a625c-ac2d-4f0b-ae07-8eddfba313d0"/>
+				<textFieldExpression><![CDATA[$F{COMENTARIO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="0" width="100" height="20" uuid="7139aa80-7a44-4b9c-8e04-c7fa116efeab"/>
+				<textFieldExpression><![CDATA[$F{COSTO_SERVICIO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="500" y="0" width="100" height="20" uuid="3635dedb-28fa-4b8c-b69a-d38aba5dfa18"/>
+				<textFieldExpression><![CDATA[$F{SALDO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
