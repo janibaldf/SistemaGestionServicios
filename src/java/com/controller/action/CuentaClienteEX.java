@@ -29,6 +29,10 @@ public class CuentaClienteEX extends ActionSupport implements ModelDriven<eCuent
     private int cTipoTransaccion2; 
     private eCliente cliente = new eCliente();
 
+    public String listaPagos() {
+        setPagos(pagodao.selectAll());
+        return SUCCESS;
+    }
     public eCliente getCliente() {
         return cliente;
     }
@@ -137,11 +141,8 @@ public class CuentaClienteEX extends ActionSupport implements ModelDriven<eCuent
     }
     
    public String getInicial() {
-       if ( this.getcCliente()>0){
-          this.setCliente(clientedao.selectOne(this.getcCliente()));
-       }else{
+     
        setClientes( clientedao.selectAll());
-       }
        setTransacciones( tipoTransaccion.selectAllTipo(5));
     return SUCCESS;
    }

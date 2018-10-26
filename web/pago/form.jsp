@@ -51,7 +51,7 @@
                             <label class="col-md-3 col-form- label" for="pago">Cliente</label>
                             <div class="col-md-5">
                                 <select id="cCliente" name="cCliente" class="form-control">
-                                    <option value="-1">Seleccione</option>
+                                    <option value="-1">Seleccione</option>       
                                     <s:iterator value="clientes" status="clienteStatus">
                                     <option value="<s:property value="codigo" />"><s:property value="codigo"/>-<s:property value="direccionImpresion"/></option>
                                     </s:iterator>

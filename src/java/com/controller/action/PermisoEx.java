@@ -18,7 +18,7 @@ public class PermisoEx extends ActionSupport implements ModelDriven<ePermiso> {
     private List<eUsuario> usuarios1;
     private List<ePermiso> permisos;
     private List<eRol> roles1;
-     private List<eRuta> rutas1;
+    private List<eRuta> rutas1;
     private PermisoDAO permisodao = new PermisoDAO();
     private RutaDAO rutadao = new RutaDAO();
     private UsuarioDAO usuariodao = new UsuarioDAO();
