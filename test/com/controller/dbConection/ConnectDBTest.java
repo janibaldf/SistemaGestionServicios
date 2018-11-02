@@ -49,11 +49,12 @@ public class ConnectDBTest {
         eCatalogo cat = new eCatalogo();
         try {
 
-            try (PreparedStatement prepareStatement = cnn.prepareStatement("SELECT * FROM TB_CATALOGO WHERE CODIGO=1000")){
+            try (PreparedStatement prepareStatement = cnn.prepareStatement("SELECT * FROM TB_USUARIO")){
                 try (ResultSet rset = prepareStatement.executeQuery()) {
-                    
+                       System.out.println("ENTRO");
                     if (rset.next()) {
-                        System.out.println(rset.getRow());
+                        System.out.println(rset.getInt("CODIGO"));
+                          System.out.println("NO ENTRO");
                        assertNotNull(result); 
                        assertNotEquals(rset.getRow(),0);
                     }

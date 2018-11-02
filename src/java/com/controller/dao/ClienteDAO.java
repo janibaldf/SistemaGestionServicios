@@ -54,6 +54,7 @@ public class ClienteDAO implements iControllerDAO<eCliente> {
                     cliente.setComentario(rset.getString("COMENTARIO"));
                     cliente.setCostoServicio(rset.getDouble(COSTOSERVICIO));
                     cliente.setSaldo(rset.getDouble("SALDO"));
+                    cliente.setDiaPago(rset.getInt("DIA_PAGO"));
                     timestamp = rset.getTimestamp("FECHA_ACTUALIZACION");
                     date = new Date(timestamp.getTime());
                     cliente.setFechaActualizacion(date);
@@ -101,6 +102,7 @@ public class ClienteDAO implements iControllerDAO<eCliente> {
                     cliente.setNumeroCasa(rset.getString("NUMERO_CASA"));
                     cliente.setApartamento(rset.getString("APARTAMENTO"));
                     cliente.setDireccionImpresion(rset.getString("DIRECCION_IMPRESION"));
+                    cliente.setDiaPago(rset.getInt("DIA_PAGO"));
                     cliente.setReferencia(rset.getString("REFERENCIA"));
                     cliente.setcEstado(rset.getInt("CODIGO_ESTADO"));
                     cliente.setMotivoEstado(rset.getString("MOTIVO_ESTADO"));
@@ -134,8 +136,8 @@ public class ClienteDAO implements iControllerDAO<eCliente> {
     public boolean add(eCliente c) {
         int executeUpdate = -1;
         String sql_insert = "INSERT INTO TB_CLIENTE(CODIGO,CODIGO_RUTA,ORDEN_SERVICIO,TIPO_PAGO,TIPO_SERVICIO,NOMBRE,TELEFONO,NIT,COMPROBANTE,ZONA,COLONIA,AVENIDA,CALLE,"
-                + "NUMERO_CASA,APARTAMENTO,DIRECCION_IMPRESION,REFERENCIA,CODIGO_ESTADO,MOTIVO_ESTADO,COMENTARIO,COSTO_SERVICIO,SALDO,FECHA_INGRESO,FECHA_ACTUALIZACION)VALUES"
-                + "((SELECT IF (MAX(CLIENTE.CODIGO) IS NULL,1, MAX(CLIENTE.CODIGO)+1) FROM TB_CLIENTE CLIENTE),?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,0,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);";
+                + "NUMERO_CASA,APARTAMENTO,DIRECCION_IMPRESION,REFERENCIA,CODIGO_ESTADO,MOTIVO_ESTADO,COMENTARIO,COSTO_SERVICIO,SALDO,DIA_PAGO,FECHA_INGRESO,FECHA_ACTUALIZACION, )VALUES"
+                + "((SELECT IF (MAX(CLIENTE.CODIGO) IS NULL,1, MAX(CLIENTE.CODIGO)+1) FROM TB_CLIENTE CLIENTE),?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,0,?,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);";
         try (PreparedStatement pstm = cnn.prepareStatement(sql_insert)) {
             pstm.setInt(1, c.getcRuta());
             pstm.setInt(2, c.getOrdenServicio());
@@ -157,6 +159,7 @@ public class ClienteDAO implements iControllerDAO<eCliente> {
             pstm.setString(18, c.getMotivoEstado());
             pstm.setString(19, c.getComentario());
             pstm.setDouble(20, c.getCostoServicio());
+            pstm.setDouble(21, c.getDiaPago());
             executeUpdate = pstm.executeUpdate();
             pstm.close();
         } catch (SQLException ex) {
@@ -203,7 +206,7 @@ public class ClienteDAO implements iControllerDAO<eCliente> {
     @Override
     public boolean update(eCliente c) {
         String sql_update = "UPDATE TB_CLIENTE SET CODIGO_RUTA=?,ORDEN_SERVICIO =?,TIPO_PAGO=?,TIPO_SERVICIO=?,NOMBRE=?,TELEFONO=?,NIT=?,COMPROBANTE=?,ZONA=?,COLONIA=?,AVENIDA=?,CALLE=?,"
-                + "NUMERO_CASA =?,APARTAMENTO=?,DIRECCION_IMPRESION=?,REFERENCIA=?,CODIGO_ESTADO=?,MOTIVO_ESTADO=?,COMENTARIO =?,COSTO_SERVICIO=?,FECHA_ACTUALIZACION=CURRENT_TIMESTAMP"
+                + "NUMERO_CASA =?,APARTAMENTO=?,DIRECCION_IMPRESION=?,REFERENCIA=?,CODIGO_ESTADO=?,MOTIVO_ESTADO=?,COMENTARIO =?,COSTO_SERVICIO=?,DIA_PAGO =?,FECHA_ACTUALIZACION=CURRENT_TIMESTAMP"
                 + " WHERE CODIGO=?";
         try (PreparedStatement pstm = cnn.prepareStatement(sql_update)) {
             pstm.setInt(1, c.getcRuta());
@@ -226,7 +229,8 @@ public class ClienteDAO implements iControllerDAO<eCliente> {
             pstm.setString(18, c.getMotivoEstado());
             pstm.setString(19, c.getComentario());
             pstm.setDouble(20, c.getCostoServicio());
-            pstm.setInt(21, c.getCodigo());
+            pstm.setDouble(21, c.getDiaPago());
+            pstm.setInt(22, c.getCodigo());
             pstm.executeUpdate();
             pstm.close();
         } catch (SQLException ex) {

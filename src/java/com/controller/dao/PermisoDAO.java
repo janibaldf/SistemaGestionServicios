@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 
 public class PermisoDAO implements iControllerDAO<ePermiso> {
 
-    private String SELECT_ALL = "SELECT * FROM tb_usuario_ruta_rol;";
+    private String SELECT_ALL = "SELECT * FROM TB_USUARIO_RUTA_ROL;";
     private String SQL_INSERT = "INSERT INTO TB_USUARIO_RUTA_ROL( CODIGO_RUTA, CODIGO_USUARIO, CODIGO_ROL, FECHA_INGRESO, FECHA_ACTUALIZACION)"
             + "VALUES(?,?,?,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP); ";
     ConnectDB estadoBD = ConnectDB.getEstadoBD();

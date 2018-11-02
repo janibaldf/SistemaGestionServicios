@@ -22,7 +22,7 @@ public class RolDAOTest {
     /**
      * Test of selectOne method, of class RolDAO.
      */
-    @Test
+
     public void testSelectOne() {
         System.out.println("selectOne");
         int id = 0;
@@ -49,7 +49,7 @@ public class RolDAOTest {
     /**
      * Test of add method, of class RolDAO.
      */
-    @Test
+
     public void testAdd() {
         System.out.println("add");
         eRol element = null;
@@ -63,7 +63,7 @@ public class RolDAOTest {
     /**
      * Test of delete method, of class RolDAO.
      */
-    @Test
+ 
     public void testDelete() {
         System.out.println("delete");
         int id = 0;
@@ -77,7 +77,7 @@ public class RolDAOTest {
     /**
      * Test of update method, of class RolDAO.
      */
-    @Test
+
     public void testUpdate() {
         System.out.println("update");
         eRol elemen = null;
@@ -91,7 +91,7 @@ public class RolDAOTest {
     /**
      * Test of updateAll method, of class RolDAO.
      */
-    @Test
+ 
     public void testUpdateAll() {
         System.out.println("updateAll");
         int id = 0;
